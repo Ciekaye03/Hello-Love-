@@ -72,14 +72,14 @@
 <body>
     <div id="video-container">
         <video autoplay muted loop>
-            <source src="/video/bg2.mp4" type="video/mp4">
+            <source src="bg2.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
     <div id="content">
         <h1>Will you be my Valentine?</h1>
         <div id="proposal-text"></div>
-        <button id="yes-button" onclick="redirectToVideo('/video/Happy.mp4')">YES</button>
+        <button id="yes-button" onclick="redirectToVideo('Happy.mp4')">YES</button>
         <button id="no-button" onclick="handleNoButtonClick()">NO</button>
     </div>
 
@@ -103,7 +103,7 @@
                 noButton.textContent = "YES";
                 noButtonClickCount++;
             } else if (noButtonClickCount === 5) {
-                redirectToVideo('/video/Happy.mp4');
+                redirectToVideo('Happy.mp4');
             }
         }
     </script>
