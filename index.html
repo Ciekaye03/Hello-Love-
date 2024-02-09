@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing Page</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #a13cff;
+  }
+  .container {
+    text-align: center;
+  }
+  h1 {
+    color: #ffffff;
+  }
+  .button {
+    padding: 10px 20px;
+    background-color: #290353;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  .button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Hello, Love-love!!</h1>
+  <button class="button" onclick="redirectToAnotherPage()">Click Me</button>
+</div>
+
+<script>
+  function redirectToAnotherPage() {
+    // Change 'another-page.html' to the actual URL of the page you want to redirect to
+    window.location.href = 'proposal.html';
+  }
+</script>
+
+</body>
+</html>

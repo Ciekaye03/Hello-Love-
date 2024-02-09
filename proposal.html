@@ -1,0 +1,111 @@
+<!-- proposal.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <title>Valentine's Day Proposal</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            padding-top: 100px;
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: rgb(82, 2, 2);
+            font-size: 50px;
+
+        }
+
+        #proposal-text {
+            margin-top: 80px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #no-button {
+            margin: 15px;
+            padding: 20px;
+            width: 100px;
+            border: none;
+            border-radius: 40px;
+            background-color: rgb(94, 14, 67);
+            color: white
+        }
+        #yes-button {
+            margin: 15px;
+            padding: 20px;
+            width: 100px;
+            border: none;
+            border-radius: 40px;
+            background-color: rgb(94, 14, 67);
+            color: white
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <video autoplay muted loop>
+            <source src="/video/bg2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div id="content">
+        <h1>Will you be my Valentine?</h1>
+        <div id="proposal-text"></div>
+        <button id="yes-button" onclick="redirectToVideo('/video/Happy.mp4')">YES</button>
+        <button id="no-button" onclick="handleNoButtonClick()">NO</button>
+    </div>
+
+    <script>
+        let noButtonClickCount = 0;
+
+        function redirectToVideo(videoPath) {
+            window.location.href = videoPath;
+        }
+
+        function handleNoButtonClick() {
+            const noButton = document.getElementById('no-button');
+            const proposalText = document.getElementById('proposal-text');
+
+            if (noButtonClickCount < 4) {
+                const texts = ["Sige na po love love", "Pag YES na, love. I'll be sad jud", "Pleaseeeee!! I will cry huhu", "Please, baby:(("];
+                proposalText.textContent = texts[noButtonClickCount];
+                noButtonClickCount++;
+            } else if (noButtonClickCount === 4) {
+                proposalText.textContent = "YES NA NA UY, BAHALA KA, i-YES na nako";
+                noButton.textContent = "YES";
+                noButtonClickCount++;
+            } else if (noButtonClickCount === 5) {
+                redirectToVideo('/video/Happy.mp4');
+            }
+        }
+    </script>
+</body>
+</html>
